@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Mup</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&display=swap" rel="stylesheet">
+    
+    <script>
+        (function(d) {
+          var config = {
+            kitId: 'ayu2tpw',
+            scriptTimeout: 3000,
+            async: true
+          },
+          h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+        })(document);
+      </script>
+    <!--Fonts-->
+
+
+    <!-- Styles -->
+    <style>
+        #topnav {
+            display: flex;
+            align-items: center;
+            position: relative;
+            font-family: 'ZCOOL QingKe HuangYou', sans-serif; 
+        }
+        
+        #topnav h3, #topnav h2, #topnav h1 { /*Top Nav Items*/
+            margin: 0 20px; 
+        }
+        
+        #topnav h1 { /*Title Page Nav*/
+            margin: 0; 
+            font-family:  "p22-canterbury-pro", sans-serif;
+            font-weight: normal;
+            font-style: normal;
+            font-size: 45pt;
+            color: black;
+        }
+        
+        #topnav h1:hover { /*What the hover effect*/
+            transform: translateY(-3px);
+            font-family: "p22-canterbury-pro", sans-serif;
+        }
+        
+        #topnav img { 
+            height: 30px; 
+            width: auto;
+            margin-right: 5px; 
+            vertical-align: middle; 
+        }
+        
+        #topnav a {
+            display: flex;
+            align-items: center; 
+            text-decoration: none; 
+            color: black; 
+            position: relative;
+            z-index: 1;
+            padding: 0 60px; 
+        }
+
+        h2 {
+            color: black; 
+            text-align: right;
+            font-family: 'Handjet', system-ui;
+            font-size: 24px; 
+            margin-bottom: 20px; 
+            flex-grow: 1; 
+        }
+
+        .container {
+            text-align: center;
+            margin-bottom: 50px; 
+            margin-top: 50px; 
+        }
+        
+        .container h1 {
+            font-size: 60px; 
+        }
+
+        p {
+            font-family: 'Handjet', system-ui;
+            font-size: 25pt; 
+            line-height: 1.5; 
+            color: grey;
+            max-width: 800px; 
+            margin: 5% auto;
+            position: relative;
+            -webkit-clip-path: inset(0 0 100% 0);
+            clip-path: inset(0 0 100% 0);
+            -webkit-animation: reveal-text 4s forwards; 
+            animation: reveal-text 4s forwards;
+        }
+
+        @keyframes reveal-text {
+            0% {
+                -webkit-clip-path: inset(0 0 100% 0);
+                clip-path: inset(0 0 100% 0);
+            }
+            100% {
+                -webkit-clip-path: inset(0 0 0 0);
+                clip-path: inset(0 0 0 0);
+            }
+        }
+
+        /* iframe */
+        iframe {
+            display: block;
+            margin: 20px auto;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%; 
+        }
+
+        #jt h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+  
+    <header>
+        <nav>
+            <div id="topnav" style="display: flex; align-items: center; justify-content: space-around; height: 80px; padding: 0 20px; font-family: 'Space Mono', monospace;">
+                <a href="../index.html">
+                <h1 style="margin: 0; font-family: 'p22-canterbury-pro', sans-serif; font-size: 45pt; color: #3D8C95;">The Mup</h1>
+                </a>
+                <a href="https://pitchfork.com/reviews/albums/" 
+                style="text-decoration: none;">
+                <h2 style="font-family: 'Handjet', system-ui; color: #E6873C;" 
+                    onmouseover="this.style.color='#3D8C95';" 
+                    onmouseout="this.style.color='#E6873C';">Reviews</h2>
+             </a>
+             <a href="../newmusic/newmusic.html" 
+                style="text-decoration: none;">
+                <h2 style="font-family: 'Handjet', system-ui; color: #E6873C;" 
+                    onmouseover="this.style.color='#3D8C95';" 
+                    onmouseout="this.style.color='#E6873C';">Best New Music</h2>
+             </a>
+             <a href="../board/board.html" 
+                style="text-decoration: none;">
+                <h2 style="font-family: 'Handjet', system-ui; color: #E6873C;" 
+                    onmouseover="this.style.color='#3D8C95';" 
+                    onmouseout="this.style.color='#E6873C';">Board</h2>
+             </a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <p>Welcome to The Mup!<br><br>
+        The Mup is an online music blog founded by me, Anthony Faustin in 2024. If you’re not from Florida, you might be asking yourself, “What hell is a mup?” Well, it’s whatever you want it to be. Seriously. Mup (or sometimes muppy) is a word that originated in Florida and is used to replace other words. You hear several artists from Florida use the word to replace the name of their city, their phone, and sometimes even the name of their songs.<br><br>
+        The Mup was created so that hip-hop music fans could find new music, browse rap-related mood boards, and even read up on some album reviews. Whether you’re a Florida native or visiting the site from anywhere else, The Mup welcomes you!</p>
+    </div>
+
+</body>
+</html>

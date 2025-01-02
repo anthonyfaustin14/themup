@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Mup</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Fonts -->
+   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&display=swap" rel="stylesheet">
+    
+    <script>
+        (function(d) {
+          var config = {
+            kitId: 'ayu2tpw',
+            scriptTimeout: 3000,
+            async: true
+          },
+          h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+        })(document);
+    </script>
+
+       <!-- Styles -->
+    <style>
+        #topnav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px; 
+            padding: 0 20px; 
+        }
+        
+        #topnav h1,
+        #topnav h2,
+        #topnav h3 {
+            margin: 0;
+            font-family: "p22-canterbury-pro", sans-serif;
+            color: #3D8C95;
+        }
+
+        #topnav h2 {
+            font-family: "Handjet", system-ui;
+            color: #E6873C;
+
+        }
+
+        #topnav h1:hover {
+            transform: translateY(-3px);
+        }
+        
+        #topnav img { 
+            height: 30px; 
+            width: auto;
+            margin-right: 5px; 
+            vertical-align: middle; 
+        }
+        
+        #topnav a {
+            display: flex;
+            align-items: center; 
+            text-decoration: none; 
+            color: #3D8C95;
+            position: relative;
+            z-index: 1;
+            padding: 0 10px; 
+        }
+
+        /* Container */
+        #imageGrid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 10px; 
+            margin-top: 20px; 
+        }
+
+        #imageGrid img {
+            width: 100%; 
+            height: auto; 
+        }
+    </style>
+</head>
+<body>
+  
+    <header>
+        <nav>
+            <div id="topnav">
+                <h1><a href="../index.html">The Mup</a></h1>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- grid container -->
+    <div id="imageGrid">
+        <!-- 9 images -->
+        <img src="img/thug.jpg" alt="Young Thug">
+        <img src="img/keemnem.jpg" alt="Veeze">
+        <img src="img/macmiller.jpg" alt="Image 3">
+        <img src="img/mfdoom.jpg" alt="MF Doom">
+        <img src="img/yachty.jpg" alt="Yachty">
+        <img src="img/veeze.jpg" alt="Veeze">
+        <img src="img/westside.jpg" alt="Westside">
+        <img src="img/pharrel.jpg" alt="Pharrel">
+        <img src="img/uzi.jpg" alt="Uzi">
+    </div>
+    
+</body>
+</html>
+
+
+

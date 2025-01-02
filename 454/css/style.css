@@ -1,0 +1,34 @@
+p {
+    font-family: "Handjet", system-ui;
+    font-size: 20px;
+    max-width: 800px; /* Ensures the text width is readable */
+    margin: 5% auto; 
+    color: grey;
+    line-height: 2; /* Increased line height for more space between lines */
+    text-align: justify; /* Justify text for cleaner edges */
+    padding: 0 20px; /* Add padding to keep the text centered */
+    position: relative;
+    -webkit-clip-path: inset(0 0 100% 0);
+    clip-path: inset(0 0 100% 0);
+    -webkit-animation: reveal-text 4s forwards;
+    animation: reveal-text 4s forwards;
+}
+
+p::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: #E6873C; /* Custom color for the divider */
+    margin: 20px auto; /* Adds space and centers the divider */
+}
+
+h1 {
+    font-family:  "p22-canterbury-pro", sans-serif;
+    font-weight: normal;
+    color: #102540;
+}
+
+h2 {
+    font-family: "Handjet", system-ui;
+}
