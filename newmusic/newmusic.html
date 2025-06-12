@@ -4,19 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>The Mup - Best New Music</title>
-    <link rel="stylesheet" href="css/style.css">
 
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&display=swap" rel="stylesheet" />
     
-    <!-- Typekit -->
     <script src="https://use.typekit.net/ayu2tpw.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
 
-    <!-- Local font -->
     <style>
+        /* Import CooperBits font */
         @font-face {
             font-family: 'CooperBits';
             src: url('../fonts/CooperBits.ttf') format('truetype');
@@ -24,6 +21,7 @@
             font-style: normal;
         }
 
+        /* Basic Reset */
         body {
             font-family: 'Handjet', system-ui;
             margin: 0;
@@ -49,7 +47,7 @@
         /* Topnav */
         #topnav {
             display: flex;
-            flex-wrap: wrap;
+            flex-wrap: wrap; /* Allows items to wrap to a new line */
             justify-content: center;
             align-items: center;
             padding: 20px 10px;
@@ -58,7 +56,7 @@
         }
 
         #topnav h1 {
-            font-family:  'CooperBits';
+            font-family: 'CooperBits';
             font-weight: normal;
             font-size: 45px;
             color: #0079BC;
@@ -80,6 +78,13 @@
         #topnav a:hover {
             color: #E57400;
         }
+        
+        /* NEW: Container for the secondary navigation links */
+        .secondary-nav {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
 
         /* Container */
         .container {
@@ -92,28 +97,35 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
+        /* Section title */
         .container h2 {
             font-family: "Handjet", system-ui;
-            font-size: 35px;
+            font-size: 32px;
             color: #E57400;
             margin-bottom: 40px;
         }
 
-        /* Grid */
+        /* Grid layout for album list */
         .grid-container {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
+            flex-direction: column; /* Stack items vertically */
+            align-items: center;
+            gap: 50px; /* Spacing between items */
         }
 
         .grid-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            max-width: 300px;
+            max-width: 600px;
+            width: 100%;
         }
 
         .grid-item img {
             width: 100%;
+            max-width: 600px;
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
@@ -129,13 +141,30 @@
             color: black;
             margin-top: 10px;
             line-height: 1.4;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Divider line after each grid item */
+        .grid-item::after {
+            content: "";
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: #E57400;
+            margin: 20px auto 0; 
+        }
+
+        /* Remove divider from the last item */
+        .grid-item:last-child::after {
+            display: none;
         }
 
         /* Responsive */
         @media (max-width: 768px) {
             .grid-container {
-                flex-direction: column;
-                align-items: center;
+                gap: 30px;
             }
 
             .grid-item img {
@@ -149,26 +178,32 @@
             #topnav a {
                 font-size: 20px;
             }
+
+            /* NEW: Rule to handle mobile navigation layout */
+            .secondary-nav {
+                flex-basis: 100%; /* Force the container to take full width */
+                justify-content: center; /* Center the links inside it */
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <!-- Background GIF -->
     <div id="background"></div>
 
-    <!-- Topnav -->
     <header>
         <nav id="topnav">
             <a href="../index.html"><h1>The Mup</h1></a>
-            <a href="https://pitchfork.com/reviews/albums/">Reviews</a>
-            <a href="../newmusic/newmusic.html">Best New Music</a>
-            <a href="../board/board.html">Board</a>
+            
+            <div class="secondary-nav">
+                <a href="https://pitchfork.com/reviews/albums/">Reviews</a>
+                <a href="../newmusic/newmusic.html">Best New Music</a>
+                <a href="../board/board.html">Board</a>
+            </div>
         </nav>
     </header>
 
-    <!-- Main content -->
     <main class="container">
         <h2>Hottest New Releases</h2>
 
