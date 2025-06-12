@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'CooperBits';
+    src: url('../fonts/CooperBits.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 /* Background GIF */
 #background {
     position: fixed;
@@ -24,7 +30,7 @@
 #topnav h2,
 #topnav h3 {
     margin: 0;
-    font-family: "p22-canterbury-pro", sans-serif;
+    font-family: 'CooperBits';
     color: #3D8C95;
 }
 

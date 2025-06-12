@@ -13,7 +13,7 @@
 }
 
 #topnav h1 {
-    font-family: 'CooperBits', sans-serif;
+    font-family: 'CooperBits';
     font-weight: normal;
     font-size: 48px;
     color: #0053B1;
@@ -30,7 +30,7 @@
 #topnav a {
     text-decoration: none;
     color: black;
-    font-size: 20px;
+    font-size: 40px;
     transition: color 0.3s ease;
     white-space: nowrap; 
 }

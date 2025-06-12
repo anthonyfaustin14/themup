@@ -37,9 +37,9 @@ p::after {
     margin: 20px auto;
 }
 
-/* Default h1 — fallback */
+
 h1 {
-    font-family:  'CooperBits';
+    font-family: 'CooperBits';
     font-weight: normal;
     color: #3D8C95;
 }
