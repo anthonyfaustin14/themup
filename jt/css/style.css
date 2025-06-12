@@ -39,7 +39,7 @@ p::after {
 
 /* Default h1 — fallback */
 h1 {
-    font-family: "CooperBits", "p22-canterbury-pro", sans-serif;
+    font-family:  'CooperBits';
     font-weight: normal;
     color: #3D8C95;
 }
@@ -56,8 +56,8 @@ h1 {
 }
 
 #topnav h1 {
-    font-family: "CooperBits", "p22-canterbury-pro", sans-serif;
-    font-weight: normal;
+    font-family:'CooperBits';
+    font-weight:normal;
     font-size: 45px;
     color: #0079BC;
     margin: 0;
@@ -98,7 +98,7 @@ h1 {
 }
 
 .container h1 {
-    font-family: "CooperBits", "p22-canterbury-pro", sans-serif;
+    font-family: 'CooperBits';
     font-size: 48px;
     color: #0079BC;
     margin-bottom: 20px;
