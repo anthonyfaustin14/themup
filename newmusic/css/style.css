@@ -1,114 +1,162 @@
+/* Import CooperBits font */
+@font-face {
+    font-family: 'CooperBits';
+    src: url('../fonts/CooperBits.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Basic Reset */
 body {
-    font-family: 'Handjet', system-ui; /* Default font for body */
+    font-family: 'Handjet', system-ui;
     margin: 0;
     padding: 0;
-}
-
-header {
-    padding: 20px 0;
-}
-
-h1 {
-    font-family: "p22-canterbury-pro", sans-serif;
-    font-size: 45pt;
-    color: #3D8C95;
-    margin: 0;
-}
-
-h2 {
-    font-size: 24pt;
-    color: #E6873C;
-    text-align: center;
-    margin: 60px 0 80px; /* Increased bottom margin */
-    font-family: 'Handjet', system-ui; /* Ensured consistency with navigation links */
-}
-
-a {
-    font-size: 18pt;
-    text-decoration: none;
     color: black;
-    padding: 0 15px;
-    font-family: 'Handjet', system-ui; /* Ensuring all text links use the same font */
+    position: relative;
+    overflow-x: hidden;
 }
 
+/* Background GIF */
+#background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background: url('../img/floridabw.gif') center center / cover no-repeat;
+    opacity: 0.15;
+    pointer-events: none;
+}
+
+/* Topnav */
 #topnav {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
+    padding: 20px 10px;
+    gap: 20px;
+    cursor: url('../img/mic.png'), auto;
+}
+
+#topnav h1 {
+    font-family: 'CooperBits', sans-serif;
+    font-weight: normal;
+    font-size: 45px;
+    color: #0079BC;
+    margin: 0;
+    transition: transform 0.3s ease;
+}
+
+#topnav h1:hover {
+    transform: translateY(-3px) scale(1.05);
+}
+
+#topnav a {
+    text-decoration: none;
+    color: black;
+    font-size: 40px;
+    transition: color 0.3s ease;
+}
+
+#topnav a:hover {
+    color: #E57400;
+}
+
+/* Container */
+.container {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 30px 20px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Section title */
+.container h2 {
+    font-family: "Handjet", system-ui;
+    font-size: 32px;
+    color: #E57400;
     margin-bottom: 40px;
 }
 
-#topnav img {
-    width: 40px;
-    height: auto;
-    vertical-align: middle;
+/* Stacked layout */
+.grid-container {
+    display: flex;
+    flex-direction: column; /* stack vertically */
+    align-items: center;
+    gap: 50px; /* spacing between items */
 }
 
-.grid-container {
+/* Each item */
+.grid-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
-}
-
-.grid-item {
+    justify-content: center;
     text-align: center;
+    max-width: 600px;
+    width: 100%;
 }
 
+/* Image styling */
 .grid-item img {
-    max-width: 80%;
-    height: auto;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
 }
 
-p {
-    font-size: 18pt;
-    color: grey;
-    margin: 20px 0; /* Maintains space around paragraphs */
-    line-height: 1.5;
+.grid-item img:hover {
+    transform: scale(1.05);
 }
 
-@keyframes reveal-text {
-    0% {
-        -webkit-clip-path: inset(0 0 100% 0);
-        clip-path: inset(0 0 100% 0);
+/* Paragraph styling */
+.grid-item p {
+    font-family: "Handjet", system-ui;
+    font-size: 30px;
+    color: black;
+    margin-top: 10px;
+    line-height: 1.4;
+    white-space: nowrap; /* keeps text on one line */
+    overflow: hidden; /* optional: prevents overflow */
+    text-overflow: ellipsis; /* optional: adds "..." if too long */
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .grid-container {
+        gap: 30px;
     }
-    100% {
-        -webkit-clip-path: inset(0 0 0 0);
-        clip-path: inset(0 0 0 0);
+
+    .grid-item img {
+        width: 90vw;
+    }
+
+    .grid-item p {
+        font-size: 18px;
+    }
+
+    #topnav a {
+        font-size: 20px;
     }
 }
-#topnav {
-    display: flex;
-    align-items: center;
-    justify-content: space-around; /* Adjusts spacing around each nav link */
-    padding: 0 20px; /* Ensures padding on the sides of the navigation */
+
+.grid-item::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: #E57400;
+    margin: 20px auto 0; /* space above the line */
 }
 
-#topnav a {
-    flex-grow: 1; /* Each link will take equal space */
-    text-align: center; /* Centers the text inside each link */
-    text-decoration: none; /* Removes underline from links */
-    padding: 0 10px; /* Consistent padding around text */
-    color: #3D8C95; /* Styling color */
-}
-
-#topnav h1, #topnav h2 {
-    margin: 0; /* Removes margin around headers */
-    color: inherit; /* Inherits color from parent link */
-}
-#topnav a {
-    flex-grow: 1; /* Each link will take equal space */
-    text-align: center; /* Centers the text inside each link */
-    text-decoration: none; /* Removes underline from links */
-    padding: 0 10px; /* Consistent padding around text */
-    color: #E6873C; /* Changes the color for all links to orange */
-}
-
-#topnav a h1, #topnav a h2 {
-    margin: 0; /* Removes margin around headers */
-    color: inherit; /* Ensures headers inherit color from parent link */
-}
-
-#topnav a[href*="index.html"] h1 { /* Targets only the h1 within the link pointing to index.html */
-    color: #3D8C95; /* Keeps the main title color different */
+/* Remove line from the last item */
+.grid-item:last-child::after {
+    display: none;
 }

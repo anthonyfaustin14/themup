@@ -1,9 +1,15 @@
+@font-face {
+    font-family: 'CooperBits';
+    src: url('../fonts/CooperBits.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 p {
     font-family: "Handjet", system-ui;
     font-size: 20px;
     max-width: 800px; /* Ensures the text width is readable */
     margin: 5% auto; 
-    color: grey;
+    color: black;
     line-height: 2; /* Increased line height for more space between lines */
     text-align: justify; /* Justify text for cleaner edges */
     padding: 0 20px; /* Add padding to keep the text centered */
@@ -24,9 +30,9 @@ p::after {
 }
 
 h1 {
-    font-family:  "p22-canterbury-pro", sans-serif;
+    font-family: 'CooperBits', sans-serif;
     font-weight: normal;
-    color: #102540;
+    color: black;
 }
 
 h2 {

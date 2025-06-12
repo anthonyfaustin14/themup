@@ -1,70 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>The Mup</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>The Mup - Best New Music</title>
     <link rel="stylesheet" href="css/style.css">
-    
+
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&display=swap" rel="stylesheet" />
     
+    <!-- Typekit -->
     <script src="https://use.typekit.net/ayu2tpw.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+    <!-- Local font -->
+    <style>
+        @font-face {
+            font-family: 'CooperBits';
+            src: url('../fonts/CooperBits.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'Handjet', system-ui;
+            margin: 0;
+            padding: 0;
+            color: black;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Background GIF */
+        #background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            background: url('../img/floridabw.gif') center center / cover no-repeat;
+            opacity: 0.15;
+            pointer-events: none;
+        }
+
+        /* Topnav */
+        #topnav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 10px;
+            gap: 20px;
+            cursor: url('../img/mic.png'), auto;
+        }
+
+        #topnav h1 {
+            font-family: 'CooperBits', sans-serif;
+            font-weight: normal;
+            font-size: 45px;
+            color: #0079BC;
+            margin: 0;
+            transition: transform 0.3s ease;
+        }
+
+        #topnav h1:hover {
+            transform: translateY(-3px) scale(1.05);
+        }
+
+        #topnav a {
+            text-decoration: none;
+            color: black;
+            font-size: 40px;
+            transition: color 0.3s ease;
+        }
+
+        #topnav a:hover {
+            color: #E57400;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 30px 20px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .container h2 {
+            font-family: "Handjet", system-ui;
+            font-size: 35px;
+            color: #E57400;
+            margin-bottom: 40px;
+        }
+
+        /* Grid */
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .grid-item {
+            text-align: center;
+            max-width: 300px;
+        }
+
+        .grid-item img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .grid-item img:hover {
+            transform: scale(1.05);
+        }
+
+        .grid-item p {
+            font-family: "Handjet", system-ui;
+            font-size: 30px;
+            color: black;
+            margin-top: 10px;
+            line-height: 1.4;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .grid-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .grid-item img {
+                width: 90vw;
+            }
+
+            .grid-item p {
+                font-size: 18px;
+            }
+
+            #topnav a {
+                font-size: 20px;
+            }
+        }
+    </style>
 </head>
+
 <body>
+
+    <!-- Background GIF -->
+    <div id="background"></div>
+
+    <!-- Topnav -->
     <header>
-        <nav id="topnav" style="display: flex; align-items: center; justify-content: space-around; padding: 0 20px;">
-            <a href="../index.html" style="flex-grow: 1; text-align: center;">
-                <h1>The Mup</h1>
-            </a>
-            <a href="https://pitchfork.com/reviews/albums/" 
-            style="text-decoration: none;">
-            <h2 style="font-family: 'Handjet', system-ui; color: #E6873C;" 
-                onmouseover="this.style.color='#3D8C95';" 
-                onmouseout="this.style.color='#E6873C';">Reviews</h2>
-         </a>
-         <a href="../newmusic/newmusic.html" 
-            style="text-decoration: none;">
-            <h2 style="font-family: 'Handjet', system-ui; color: #E6873C;" 
-                onmouseover="this.style.color='#3D8C95';" 
-                onmouseout="this.style.color='#E6873C';">Best New Music</h2>
-         </a>
-         <a href="../board/board.html" 
-            style="text-decoration: none;">
-            <h2 style="font-family: 'Handjet', system-ui; color: #E6873C;" 
-                onmouseover="this.style.color='#3D8C95';" 
-                onmouseout="this.style.color='#E6873C';">Board</h2>
-         </a>
+        <nav id="topnav">
+            <a href="../index.html"><h1>The Mup</h1></a>
+            <a href="https://pitchfork.com/reviews/albums/">Reviews</a>
+            <a href="../newmusic/newmusic.html">Best New Music</a>
+            <a href="../board/board.html">Board</a>
         </nav>
     </header>
-    
-    <!-- Adjusted spacing for visual clarity -->
-    <h2 style="text-align: center; margin-top: 40px; margin-bottom: 80px; font-size: 30px; font-family: 'Handjet', system-ui; color: grey;">Hottest New Releases</h2>
 
-    <div class="grid-container">
-        <div class="grid-item">
-            <img src="img/pinball.jpg" alt="Pinball">
-            <p>Mike & Tony Seltzer - Pinball</p>
+    <!-- Main content -->
+    <main class="container">
+        <h2>Hottest New Releases</h2>
+
+        <div class="grid-container">
+            <div class="grid-item">
+                <img src="img/pinball.jpg" alt="Pinball">
+                <p>Mike & Tony Seltzer - Pinball</p>
+            </div>
+            <div class="grid-item">
+                <img src="img/metro.jpg" alt="We Dont Trust You">
+                <p>Metro Boom & Future - We Dont Trust You</p>
+            </div>
+            <div class="grid-item">
+                <img src="img/nine.jpg" alt="9">
+                <p>Kenny Mason - 9</p>
+            </div>
+            <div class="grid-item">
+                <img src="img/bk.jpg" alt="LVL 5 P2">
+                <p>Bktherula - LVL 5 P2</p>
+            </div>
+            <div class="grid-item">
+                <img src="img/itsus.jpg" alt="Its Us Vol. 1">
+                <p>Concrete Boys - It's Us Vol. 1</p>
+            </div>
         </div>
-        <div class="grid-item">
-            <img src="img/metro.jpg" alt="We Dont Trust You">
-            <p>Metro Boom & Future - We Dont Trust You</p>
-        </div>
-        <div class="grid-item">
-            <img src="img/nine.jpg" alt="9">
-            <p>Kenny Mason - 9</p>
-        </div>
-        <div class="grid-item">
-            <img src="img/bk.jpg" alt="LVL 5 P2">
-            <p>Bktherula - LVL 5 P2</p>
-        </div>
-        <div class="grid-item">
-            <img src="img/itsus.jpg" alt="Its Us Vol. 1">
-            <p>Concrete Boys - It's Us Vol. 1</p>
-        </div>
-    </div>
+    </main>
 
 </body>
 </html>

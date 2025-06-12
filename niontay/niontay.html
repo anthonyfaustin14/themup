@@ -1,151 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>The Mup</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>The Mup - Niontay</title>
     <link rel="stylesheet" href="css/style.css">
-    
+
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&display=swap" rel="stylesheet" />
     
+    <!-- Typekit -->
     <script>
         (function(d) {
-          var config = {
-            kitId: 'ayu2tpw',
-            scriptTimeout: 3000,
-            async: true
-          },
-          h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+            var config = {
+                kitId: 'ayu2tpw',
+                scriptTimeout: 3000,
+                async: true
+            },
+            h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;
+            h.className+=" wf-loading";
+            tk.src='https://use.typekit.net/'+config.kitId+'.js';
+            tk.async=true;
+            tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};
+            s.parentNode.insertBefore(tk,s)
         })(document);
     </script>
-    
+
     <!-- Styles -->
     <style>
-         
-         #topnav {
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Handjet', system-ui;
+            color: black;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Background GIF */
+        #background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            background: url('../img/floridabw.gif') center center / cover no-repeat;
+            opacity: 0.15;
+            pointer-events: none;
+        }
+
+        #topnav {
             display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             align-items: center;
-            position: relative;
-            font-family: "Handjet", system-ui;
+            padding: 20px 10px;
+            gap: 20px;
+            cursor: url('../img/mic.png'), auto;
+            
         }
-        
-        #topnav h3, #topnav h2, #topnav h1 {
-            margin: 0 10px; 
+
+        #topnav h1 {
+            font-family: 'CooperBits', sans-serif;
+            font-weight: normal;
+            font-size: 45px;
+            color: #0079BC;
+            margin: 0;
+            transition: transform 0.3s ease;
         }
-        
+
         #topnav h1:hover {
-            transform: translateY(-3px);
+            transform: translateY(-3px) scale(1.05);
         }
-        
-        #topnav img { 
-            height: 30px; 
-            width: auto;
-            margin-right: 5px; 
-            vertical-align: middle; 
-        }
-        
+
         #topnav a {
-            display: flex;
-            align-items: center; 
-            text-decoration: none; 
-            position: relative;
-            z-index: 1;
-            padding: 0 10px; 
+            text-decoration: none;
+            color: black;
+            font-size: 40px;
+            transition: color 0.3s ease;
         }
-        h2 {
-            color: #E6873C;
-            text-align: right;
-            flex-grow: 1; 
-            font-family: "Handjet", system-ui;
-            margin-bottom: 20px; 
+
+        #topnav a:hover {
+            color: #E57400;
         }
+
         .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 30px 20px;
             text-align: center;
+            background-color: rgba(255, 255, 255, 0.7); /* 70% opacity white */
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .container h1 {
+            font-family: 'CooperBits', sans-serif;
+            font-size: 48px;
+            color: #0079BC;
+            margin-bottom: 20px;
+        }
+
+        .container p {
+            font-family: "Handjet", system-ui;
+            font-size: 25px;
+            max-width: 800px;
+            margin: 5% auto;
+            color: black;
+            line-height: 1.7;
+            text-align: justify;
+            padding: 0 20px;
+        }
+
+        .container p::after {
+            content: "";
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color:#E57400;
+            margin: 20px auto;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            padding-top: 25px;
+            height: 0;
             margin-bottom: 50px;
-            margin-top: 50px; 
-        }
-        
-        .container h1 {
-            font-family: "p22-canterbury-pro", sans-serif;
-            font-size: 60px;
-            color: #3D8C95; 
-        }
-        
-
-        @keyframes reveal-text {
-            0% {
-                -webkit-clip-path: inset(0 0 100% 0);
-                clip-path: inset(0 0 100% 0);
-            }
-            100% {
-                -webkit-clip-path: inset(0 0 0 0);
-                clip-path: inset(0 0 0 0);
-            }
-        }
-        
-    
-        iframe {
-            display: block;
-            margin: 20px auto; 
         }
 
-        
-        img {
-            display: block;
-            margin: 0 auto; 
-            max-width: 50%; 
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
         }
 
-      
-        .container h1 {
-            text-align: center; 
+        h1 {
+            font-family: 'CooperBits', sans-serif;
+            font-weight: normal;
+            color: #0079BC;
         }
     </style>
 </head>
+
 <body>
-  
+
+    <!-- Background GIF -->
+    <div id="background"></div>
+
     <header>
-        <nav>
-            <div id="topnav" style="display: flex; align-items: center; justify-content: space-around; height: 80px; padding: 0 20px; font-family: 'Space Mono', monospace;">
-                <a href="../index.html">
-                <h1 style="margin: 0; font-family: 'p22-canterbury-pro', sans-serif; font-size: 45pt; color: #3D8C95;">The Mup</h1>
-                </a>
-                <a href="https://pitchfork.com/reviews/albums/" 
-                style="text-decoration: none;">
-                <h2 style="font-family: 'Handjet', system-ui; color: #E6873C;" 
-                    onmouseover="this.style.color='#3D8C95';" 
-                    onmouseout="this.style.color='#E6873C';">Reviews</h2>
-             </a>
-             <a href="../newmusic/newmusic.html" 
-                style="text-decoration: none;">
-                <h2 style="font-family: 'Handjet', system-ui; color: #E6873C;" 
-                    onmouseover="this.style.color='#3D8C95';" 
-                    onmouseout="this.style.color='#E6873C';">Best New Music</h2>
-             </a>
-             <a href="../board/board.html" 
-                style="text-decoration: none;">
-                <h2 style="font-family: 'Handjet', system-ui; color: #E6873C;" 
-                    onmouseover="this.style.color='#3D8C95';" 
-                    onmouseout="this.style.color='#E6873C';">Board</h2>
-             </a>
-            </div>
+        <nav id="topnav">
+            <a href="../index.html"><h1>The Mup</h1></a>
+            <a href="https://pitchfork.com/reviews/albums/">Reviews</a>
+            <a href="../newmusic/newmusic.html">Best New Music</a>
+            <a href="../board/board.html">Board</a>
         </nav>
     </header>
 
-    <div class="container" style="margin-top: 100px;"> 
-        <img src="img/niontaypic.png" width="50%"> 
+    <main class="container">
+        <img src="img/niontaypic.png" alt="Niontay">
         <h1>Niontay</h1>
-        <p>Last spring, I attended the Treefort Music Festival in Boise, ID. While enjoying MIKE’s set, he introduced a rapper rocking distinctive Florida wicks. This mystery rapper performs a couple of fast-paced songs that have everyone hyped before MIKE returns to the stage. After the show, MIKE fans, myself included, waited by the merch booth upon hearing rumors that MIKE would be stopping by to greet fans and sign autographs. However, the rapper that MIKE brought out is by the booth greeting to few fans that speak to him. On my way out of the venue, I went up to him to let him know that I enjoyed his performance. He daps me up and thanks me as I am walking out and I continue with my night. Little did I know that this same artist I met who was unknown to me at the time would become one of my favorite artists & one of my top-streamed artists of 2023 and one of my new favorite artists. Meet Niontay. Niontay was born in Milwaukee but moved to Kissimmee, Florida when he was a kid. In 2019 Niontay moved to New York where he eventually crossed paths with MIKE and since then we have seen Niontay appear in several of MIKE’s music videos and have gotten iconic collaborations from the two such as “Wheredeyat???”, “Mussel Beach, & “2K24 Tour”. Niontay’s breakthrough came with his debut album Dontay’s Inferno which caught the attention from the likes of Earl Sweatshirt with tracks like Thank Allah which even earned a spot on Pitchfork’s "42 Best Rap Songs of 2023" list. Among my personal favorites from the album are tracks like "Blitzberg" and "Aint Sh*t," which exhibit Niontay's lyrical prowess and the influence of Florida's rap scene on his music. In November of 2023, Niontay blessed fans once again with his Demon Muppy - EP featuring collaborations with heavyweights like Earl Sweatshirt, El Costeau, and MIKE on “Real hiphop” and Florida rapper 454 on “Supa Bowl LVIII”. In the 6 songs 14-minute EP Niontay gives several nods to Florida with quotes like “I'm up top, I still thug on my Florida sh*t” and “B*tch knowing not to hit my mup when it's early’’. Overall, the short EP is packed with various notable verses, and creatively produced beats, that’ll have you playing songs on a daily repeat. So far this year we have only gotten a few features from Niontay and I am excited to see what he has in store for us.</p>
-    </div>
-    
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/Tpz2i91hwRA?si=RJbp2Ytqgd9nku09" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    
-    <div style="margin-bottom: 50px;"></div>
+        <p>Last spring, I attended the Treefort Music Festival in Boise, ID. While enjoying MIKE’s set, he introduced a rapper rocking distinctive Florida wicks. This mystery rapper performs a couple of fast-paced songs that have everyone hyped before MIKE returns to the stage. After the show, MIKE fans, myself included, waited by the merch booth upon hearing rumors that MIKE would be stopping by to greet fans and sign autographs. However, the rapper that MIKE brought out is by the booth greeting to few fans that speak to him. On my way out of the venue, I went up to him to let him know that I enjoyed his performance. He daps me up and thanks me as I am walking out and I continue with my night. Little did I know that this same artist I met who was unknown to me at the time would become one of my favorite artists & one of my top-streamed artists of 2023 and one of my new favorite artists. Meet Niontay. Niontay was born in Milwaukee but moved to Kissimmee, Florida when he was a kid. In 2019 Niontay moved to New York where he eventually crossed paths with MIKE and since then we have seen Niontay appear in several of MIKE’s music videos and have gotten iconic collaborations from the two such as “Wheredeyat???”, “Mussel Beach," and “2K24 Tour”. Niontay’s breakthrough came with his debut album Dontay’s Inferno which caught the attention from the likes of Earl Sweatshirt with tracks like Thank Allah which even earned a spot on Pitchfork’s "42 Best Rap Songs of 2023" list. Among my personal favorites from the album are tracks like "Blitzberg" and "Aint Sh*t," which exhibit Niontay's lyrical prowess and the influence of Florida's rap scene on his music. In November of 2023, Niontay blessed fans once again with his Demon Muppy - EP featuring collaborations with heavyweights like Earl Sweatshirt, El Costeau, and MIKE on “Real hiphop” and Florida rapper 454 on “Supa Bowl LVIII”. In the 6-song, 14-minute EP Niontay gives several nods to Florida with quotes like “I'm up top, I still thug on my Florida sh*t” and “B*tch knowing not to hit my mup when it's early’’. Overall, the short EP is packed with various notable verses and creatively produced beats that’ll have you playing songs on a daily repeat. So far this year we have only gotten a few features from Niontay and I am excited to see what he has in store for us.</p>
 
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/dTBG3YItpOY?si=jQ67LcXI4ARN_rPk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/Tpz2i91hwRA?si=RJbp2Ytqgd9nku09" title="Niontay - Video 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/dTBG3YItpOY?si=jQ67LcXI4ARN_rPk" title="Niontay - Video 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </main>
 </body>
 </html>
-
-

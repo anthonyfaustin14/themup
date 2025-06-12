@@ -1,153 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>The Mup</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>The Mup - JT</title>
     <link rel="stylesheet" href="css/style.css">
-    
+
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&display=swap" rel="stylesheet" />
     
+    <!-- Typekit -->
     <script>
         (function(d) {
-          var config = {
-            kitId: 'ayu2tpw',
-            scriptTimeout: 3000,
-            async: true
-          },
-          h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+            var config = {
+                kitId: 'ayu2tpw',
+                scriptTimeout: 3000,
+                async: true
+            },
+            h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;
+            h.className+=" wf-loading";
+            tk.src='https://use.typekit.net/'+config.kitId+'.js';
+            tk.async=true;
+            tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};
+            s.parentNode.insertBefore(tk,s)
         })(document);
-      </script>
+    </script>
 
     <!-- Styles -->
     <style>
-        #topnav {
-            display: flex;
-            align-items: center;
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Handjet', system-ui;
+            color: black;
             position: relative;
-            font-family: 'ZCOOL QingKe HuangYou', sans-serif; 
-        }
-        
-        #topnav h3, #topnav h2, #topnav h1 {
-            margin: 0 10px; 
-        }
-        
-        #topnav h1 {
-            font-weight: normal;
-            font-size: 30px; 
-            color: #3D8C95; 
-        }
-        
-        #topnav h1:hover {
-            transform: translateY(-3px);
-        }
-        
-        #topnav img { 
-            height: 30px; 
-            width: auto;
-            margin-right: 5px; 
-            vertical-align: middle; 
-        }
-        
-        #topnav a {
-            display: flex;
-            align-items: center; 
-            text-decoration: none; 
-            color: #3D8C95; 
-            position: relative;
-            z-index: 1;
-            padding: 0 10px; 
+            overflow-x: hidden;
         }
 
-        h2 {
-            color: #447957;
-            text-align: right;
-            font-family: "Handjet", system-ui;
-            font-size: 24px; 
-            margin-bottom: 20px; 
-            flex-grow: 1; 
+        /* Background GIF */
+        #background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            background: url('../img/floridabw.gif') center center / cover no-repeat;
+            opacity: 0.15; /* Very low opacity for text pages */
+            pointer-events: none;
+        }
+
+        #topnav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 10px;
+            gap: 20px;
+            cursor: url('../img/mic.png'), auto;
+           
+        }
+
+        #topnav h1 {
+            font-family: 'CooperBits';
+            font-weight: normal;
+            font-size: 45px;
+            color: #0079BC;
+            margin: 0;
+            transition: transform 0.3s ease;
+        }
+
+        #topnav h1:hover {
+            transform: translateY(-3px) scale(1.05);
+        }
+
+        #topnav a {
+            text-decoration: none;
+            color: black;
+            font-size: 40px;
+            transition: color 0.3s ease;
+        }
+
+        #topnav a:hover {
+            color: #E57400;
         }
 
         .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 30px 20px;
             text-align: center;
-            margin-bottom: 50px; 
-            margin-top: 50px; 
+            background-color: rgba(255, 255, 255, 0.7); /* this is correct 70% opacity */
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            /* no opacity property here! */
         }
-        
+
+        .container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
         .container h1 {
-            font-size: 60px; 
-        }
-        @keyframes reveal-text {
-            0% {
-                -webkit-clip-path: inset(0 0 100% 0);
-                clip-path: inset(0 0 100% 0);
-            }
-            100% {
-                -webkit-clip-path: inset(0 0 0 0);
-                clip-path: inset(0 0 0 0);
-            }
+            font-family: 'CooperBits';
+            font-size: 48px;
+            color: #0079BC;
+            margin-bottom: 20px;
         }
 
+        .container p {
+            font-family: "Handjet", system-ui;
+            font-size: 25px;
+            max-width: 800px;
+            margin: 5% auto;
+            color: black;
+            line-height: 1.7;
+            text-align: justify;
+            padding: 0 20px;
+        }
 
-        iframe {
+        .container p::after {
+            content: "";
             display: block;
-            margin: 20px auto; 
+            width: 50px;
+            height: 3px;
+            background-color:#E57400;
+            margin: 20px auto;
         }
 
-
-        img {
-            display: block;
-            margin: 0 auto;
-            max-width: 100%; 
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            padding-top: 25px;
+            height: 0;
+            margin-bottom: 50px;
         }
 
-        
-        #jt h1 {
-            text-align: center;
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
         }
+
+        h1 {
+            font-family: "p22-canterbury-pro", sans-serif;
+            font-weight: normal;
+            color: #0079BC;
+        }
+
     </style>
 </head>
+
 <body>
-  
+
+    <!-- Background GIF -->
+    <div id="background"></div>
+
     <header>
-        <nav>
-            <div id="topnav" style="display: flex; align-items: center; justify-content: space-around; height: 80px; padding: 0 20px; font-family: 'Space Mono', monospace;">
-                <a href="../index.html">
-                <h1 style="margin: 0; font-family: 'p22-canterbury-pro', sans-serif; font-size: 45pt; color: #3D8C95;">The Mup</h1>
-                </a>
-                <a href="https://pitchfork.com/reviews/albums/" 
-                style="text-decoration: none;">
-                <h2 style="font-family: 'Handjet', system-ui; color: #E6873C;" 
-                    onmouseover="this.style.color='#3D8C95';" 
-                    onmouseout="this.style.color='#E6873C';">Reviews</h2>
-             </a>
-             <a href="../newmusic/newmusic.html" 
-                style="text-decoration: none;">
-                <h2 style="font-family: 'Handjet', system-ui; color: #E6873C;" 
-                    onmouseover="this.style.color='#3D8C95';" 
-                    onmouseout="this.style.color='#E6873C';">Best New Music</h2>
-             </a>
-             <a href="../board/board.html" 
-                style="text-decoration: none;">
-                <h2 style="font-family: 'Handjet', system-ui; color: #E6873C;" 
-                    onmouseover="this.style.color='#3D8C95';" 
-                    onmouseout="this.style.color='#E6873C';">Board</h2>
-             </a>
-            </div>
+        <nav id="topnav">
+            <a href="../index.html"><h1>The Mup</h1></a>
+            <a href="https://pitchfork.com/reviews/albums/">Reviews</a>
+            <a href="../newmusic/newmusic.html">Best New Music</a>
+            <a href="../board/board.html">Board</a>
         </nav>
     </header>
 
-    <div id="jt" class="container">
-        <img src="img/jtpic.png" width="50%">
-        <h1>J.T.</h1>
-        <p>JT is one half of the dynamic rap-girl duo City Girls which consists of her and Yung Miami. The two released their debut album PERIOD in 2018 and since then we have received timeless summer anthems and catchy songs such as “Take Yo Man”, “Act Up”, and “Twerk” which features Bronx-rapper Cardi B. JT gave us a first glimpse of her strength as an individual artist when she released her “JT First Day Out Single in 2019”. In the past couple of years, it appears to me that JT is venturing out of her Miami rap scene and evolving her solo artistry.“I’m excited about dropping solo music because I can focus more on my creativity. I love everything about being an artist! I just wanna chill, look good and drop pretty cocky b*tch music. I’m the City Cinderella!” JT told Rolling Stone. Last year, JT released her second solo “No Bars” and appeared on Kali Uchis’s “Muñekita” single which was the first time I heard her on a Latin record. Last month, she released a song and music video titled “Sideways” which not only has head-bopping flow but serves as a reminder to her listeners that sometime you gotta look at your haters sideways.“Sideways' is a mood. This is empowerment, ‘Sideways’ is empowerment. We all need to feel that confidence!” she told GENIUS. Since its release last month, its music video has received over six million views on YouTube and debuted in Apple Music’s top 100 all-genre charts. JT also recently announced a 14-show tour and that she will be dropping an album later this year. As she continues to grow as an artist, JT proves that she deserves the title of the City-Cinderella of the rap game.</p>
-    </div>
-    
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/ktnppnuDun4?si=gro3ffepVnXEqKl1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </div>
-    
+    <main class="container">
+        <img src="img/jtpic.png" alt="JT">
+        <h1>JT</h1>
+        <p>JT is one half of the dynamic rap-girl duo City Girls which consists of her and Yung Miami. The two released their debut album PERIOD in 2018 and since then we have received timeless summer anthems and catchy songs such as “Take Yo Man”, “Act Up”, and “Twerk” which features Bronx-rapper Cardi B. JT gave us a first glimpse of her strength as an individual artist when she released her “JT First Day Out” single in 2019. In the past couple of years, JT is venturing out of her Miami rap scene and evolving her solo artistry. “I’m excited about dropping solo music because I can focus more on my creativity. I love everything about being an artist! I just wanna chill, look good and drop pretty cocky b*tch music. I’m the City Cinderella!” JT told Rolling Stone. Last year, JT released her second solo “No Bars” and appeared on Kali Uchis’s “Muñekita” single which was the first time I heard her on a Latin record. Last month, she released a song and music video titled “Sideways” which not only has head-bopping flow but serves as a reminder to her listeners that sometimes you gotta look at your haters sideways. “Sideways' is a mood. This is empowerment, ‘Sideways’ is empowerment. We all need to feel that confidence!” she told GENIUS. Since its release last month, its music video has received over six million views on YouTube and debuted in Apple Music’s top 100 all-genre charts. JT also recently announced a 14-show tour and that she will be dropping an album later this year. As she continues to grow as an artist, JT proves that she deserves the title of the City Cinderella of the rap game.</p>
+
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/ktnppnuDun4?si=gro3ffepVnXEqKl1" title="JT - Sideways" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </main>
 </body>
 </html>
-

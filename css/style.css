@@ -1,0 +1,44 @@
+#topnav {
+    display: flex;
+    flex-wrap: nowrap; /* keep everything on one line */
+    justify-content: center;
+    align-items: center;
+    padding: 20px 10px;
+    gap: 20px;
+    overflow-x: auto; /* allow scroll if too small */
+    cursor: url('img/mic.png'), auto;
+    background-color: transparent;
+    position: relative;
+    z-index: 1;
+}
+
+#topnav h1 {
+    font-family: 'CooperBits', sans-serif;
+    font-weight: normal;
+    font-size: 48px;
+    color: #0053B1;
+    margin: 0;
+    transition: transform 0.3s ease;
+    white-space: nowrap; /* keep h1 in one line */
+}
+
+#topnav h1:hover {
+    transform: translateY(-3px) scale(1.05);
+    animation: bounce 0.5s infinite;
+}
+
+#topnav a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    transition: color 0.3s ease;
+    white-space: nowrap; /* keep nav links in one line */
+}
+
+#topnav a:hover {
+    color: #E6873C;
+}
+#topnav h1 {
+    display: inline-block;
+    white-space: nowrap;
+}

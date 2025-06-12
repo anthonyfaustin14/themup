@@ -1,0 +1,92 @@
+/* Background GIF */
+#background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background: url('../img/floridabw.gif') center center / cover no-repeat;
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+/* Topnav */
+#topnav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px; 
+    padding: 0 20px; 
+}
+
+#topnav h1,
+#topnav h2,
+#topnav h3 {
+    margin: 0;
+    font-family: "p22-canterbury-pro", sans-serif;
+    color: #3D8C95;
+}
+
+#topnav h2 {
+    font-family: "Handjet", system-ui;
+    color: #E6873C;
+}
+
+#topnav h1:hover {
+    transform: translateY(-3px);
+}
+
+#topnav img { 
+    height: 30px; 
+    width: auto;
+    margin-right: 5px; 
+    vertical-align: middle; 
+}
+
+#topnav a {
+    display: flex;
+    align-items: center; 
+    text-decoration: none; 
+    color: #3D8C95;
+    position: relative;
+    z-index: 1;
+    padding: 0 10px; 
+}
+
+/* Image Grid */
+#imageGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 10px; 
+    margin-top: 20px; 
+    padding: 20px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#imageGrid img {
+    width: 100%; 
+    height: auto; 
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+#imageGrid img:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #imageGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    #imageGrid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,103 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>The Mup</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>The Mup - About</title>
     <link rel="stylesheet" href="css/style.css">
-    
+
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&display=swap" rel="stylesheet" />
     
+    <!-- Typekit -->
     <script>
         (function(d) {
-          var config = {
-            kitId: 'ayu2tpw',
-            scriptTimeout: 3000,
-            async: true
-          },
-          h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+            var config = {
+                kitId: 'ayu2tpw',
+                scriptTimeout: 3000,
+                async: true
+            },
+            h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;
+            h.className+=" wf-loading";
+            tk.src='https://use.typekit.net/'+config.kitId+'.js';
+            tk.async=true;
+            tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};
+            s.parentNode.insertBefore(tk,s)
         })(document);
-      </script>
-    <!--Fonts-->
-
+    </script>
 
     <!-- Styles -->
     <style>
-        #topnav {
-            display: flex;
-            align-items: center;
-            position: relative;
-            font-family: 'ZCOOL QingKe HuangYou', sans-serif; 
-        }
-        
-        #topnav h3, #topnav h2, #topnav h1 { /*Top Nav Items*/
-            margin: 0 20px; 
-        }
-        
-        #topnav h1 { /*Title Page Nav*/
-            margin: 0; 
-            font-family:  "p22-canterbury-pro", sans-serif;
+        @font-face {
+            font-family: 'CooperBits';
+            src: url('../fonts/CooperBits.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
-            font-size: 45pt;
-            color: black;
-        }
-        
-        #topnav h1:hover { /*What the hover effect*/
-            transform: translateY(-3px);
-            font-family: "p22-canterbury-pro", sans-serif;
-        }
-        
-        #topnav img { 
-            height: 30px; 
-            width: auto;
-            margin-right: 5px; 
-            vertical-align: middle; 
-        }
-        
-        #topnav a {
-            display: flex;
-            align-items: center; 
-            text-decoration: none; 
-            color: black; 
-            position: relative;
-            z-index: 1;
-            padding: 0 60px; 
         }
 
-        h2 {
-            color: black; 
-            text-align: right;
+        body {
+            margin: 0;
+            padding: 0;
             font-family: 'Handjet', system-ui;
-            font-size: 24px; 
-            margin-bottom: 20px; 
-            flex-grow: 1; 
+            color: black;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Background GIF */
+        #background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            background: url('../img/floridabw.gif') center center / cover no-repeat;
+            opacity: 0.15;
+            pointer-events: none;
+        }
+
+        #topnav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 10px;
+            gap: 20px;
+            cursor: url('../img/mic.png'), auto;
+        }
+
+        #topnav h1 {
+            font-family: 'CooperBits', sans-serif;
+            font-weight: normal;
+            font-size: 45px;
+            color: #0079BC;
+            margin: 0;
+            transition: transform 0.3s ease;
+        }
+
+        #topnav h1:hover {
+            transform: translateY(-3px) scale(1.05);
+        }
+
+        #topnav a {
+            text-decoration: none;
+            color: black;
+            font-size: 40px;
+            transition: color 0.3s ease;
+        }
+
+        #topnav a:hover {
+            color: #E57400;
         }
 
         .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 30px 20px;
             text-align: center;
-            margin-bottom: 50px; 
-            margin-top: 50px; 
-        }
-        
-        .container h1 {
-            font-size: 60px; 
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
-        p {
-            font-family: 'Handjet', system-ui;
-            font-size: 25pt; 
-            line-height: 1.5; 
-            color: grey;
-            max-width: 800px; 
+        .container h1 {
+            font-family: 'CooperBits', sans-serif;
+            font-size: 48px;
+            color: #0079BC;
+            margin-bottom: 20px;
+        }
+
+        .container p {
+            font-family: "Handjet", system-ui;
+            font-size: 25px;
+            max-width: 800px;
             margin: 5% auto;
+            color: black;
+            line-height: 1.7;
+            text-align: justify;
+            padding: 0 20px;
             position: relative;
             -webkit-clip-path: inset(0 0 100% 0);
             clip-path: inset(0 0 100% 0);
-            -webkit-animation: reveal-text 4s forwards; 
+            -webkit-animation: reveal-text 4s forwards;
             animation: reveal-text 4s forwards;
+        }
+
+        .container p::after {
+            content: "";
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: #E57400;
+            margin: 20px auto;
         }
 
         @keyframes reveal-text {
@@ -110,59 +145,29 @@
                 clip-path: inset(0 0 0 0);
             }
         }
-
-        /* iframe */
-        iframe {
-            display: block;
-            margin: 20px auto;
-        }
-
-        img {
-            display: block;
-            margin: 0 auto;
-            max-width: 100%; 
-        }
-
-        #jt h1 {
-            text-align: center;
-        }
     </style>
 </head>
+
 <body>
-  
+
+    <!-- Background GIF -->
+    <div id="background"></div>
+
     <header>
-        <nav>
-            <div id="topnav" style="display: flex; align-items: center; justify-content: space-around; height: 80px; padding: 0 20px; font-family: 'Space Mono', monospace;">
-                <a href="../index.html">
-                <h1 style="margin: 0; font-family: 'p22-canterbury-pro', sans-serif; font-size: 45pt; color: #3D8C95;">The Mup</h1>
-                </a>
-                <a href="https://pitchfork.com/reviews/albums/" 
-                style="text-decoration: none;">
-                <h2 style="font-family: 'Handjet', system-ui; color: #E6873C;" 
-                    onmouseover="this.style.color='#3D8C95';" 
-                    onmouseout="this.style.color='#E6873C';">Reviews</h2>
-             </a>
-             <a href="../newmusic/newmusic.html" 
-                style="text-decoration: none;">
-                <h2 style="font-family: 'Handjet', system-ui; color: #E6873C;" 
-                    onmouseover="this.style.color='#3D8C95';" 
-                    onmouseout="this.style.color='#E6873C';">Best New Music</h2>
-             </a>
-             <a href="../board/board.html" 
-                style="text-decoration: none;">
-                <h2 style="font-family: 'Handjet', system-ui; color: #E6873C;" 
-                    onmouseover="this.style.color='#3D8C95';" 
-                    onmouseout="this.style.color='#E6873C';">Board</h2>
-             </a>
-            </div>
+        <nav id="topnav">
+            <a href="../index.html"><h1>The Mup</h1></a>
+            <a href="https://pitchfork.com/reviews/albums/">Reviews</a>
+            <a href="../newmusic/newmusic.html">Best New Music</a>
+            <a href="../board/board.html">Board</a>
         </nav>
     </header>
 
-    <div class="container">
+    <main class="container">
+        <h1>About</h1>
         <p>Welcome to The Mup!<br><br>
         The Mup is an online music blog founded by me, Anthony Faustin in 2024. If you’re not from Florida, you might be asking yourself, “What hell is a mup?” Well, it’s whatever you want it to be. Seriously. Mup (or sometimes muppy) is a word that originated in Florida and is used to replace other words. You hear several artists from Florida use the word to replace the name of their city, their phone, and sometimes even the name of their songs.<br><br>
         The Mup was created so that hip-hop music fans could find new music, browse rap-related mood boards, and even read up on some album reviews. Whether you’re a Florida native or visiting the site from anywhere else, The Mup welcomes you!</p>
-    </div>
+    </main>
 
 </body>
 </html>

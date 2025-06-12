@@ -1,97 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>The Mup</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>The Mup - 454</title>
     <link rel="stylesheet" href="css/style.css">
-    
+
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&display=swap" rel="stylesheet" />
     
+    <!-- Typekit -->
     <script>
         (function(d) {
-          var config = {
-            kitId: 'ayu2tpw',
-            scriptTimeout: 3000,
-            async: true
-          },
-          h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+            var config = {
+                kitId: 'ayu2tpw',
+                scriptTimeout: 3000,
+                async: true
+            },
+            h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;
+            h.className+=" wf-loading";
+            tk.src='https://use.typekit.net/'+config.kitId+'.js';
+            tk.async=true;
+            tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};
+            s.parentNode.insertBefore(tk,s)
         })(document);
-      </script>
+    </script>
 
-    
     <!-- Styles -->
     <style>
+        @font-face {
+            font-family: 'CooperBits';
+            src: url('../fonts/CooperBits.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Handjet', system-ui;
+            color: black;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Background GIF */
+        #background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            background: url('../img/floridabw.gif') center center / cover no-repeat;
+            opacity: 0.15;
+            pointer-events: none;
+        }
+
         #topnav {
             display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             align-items: center;
-            position: relative;
-            font-family: 'ZCOOL QingKe HuangYou', sans-serif; 
+            padding: 20px 10px;
+            gap: 20px;
+            cursor: url('../img/mic.png'), auto;
         }
-        
-        #topnav h3, #topnav h2, #topnav h1 {
-            margin: 0 10px; 
-        }
-        
+
         #topnav h1 {
+            font-family: 'CooperBits', sans-serif;
             font-weight: normal;
-            font-size: 30px; 
+            font-size: 45px;
+            color: #0079BC;
+            margin: 0;
+            transition: transform 0.3s ease;
         }
-        
+
         #topnav h1:hover {
-            transform: translateY(-3px);
+            transform: translateY(-3px) scale(1.05);
         }
-        
-        #topnav img { 
-            height: 30px; 
-            width: auto;
-            margin-right: 5px; 
-            vertical-align: middle; 
-        }
-        
+
         #topnav a {
-            display: flex;
-            align-items: center; 
-            text-decoration: none;  
-            position: relative;
-            z-index: 1;
-            padding: 0 10px; 
+            text-decoration: none;
+            color: black;
+            font-size: 40px;
+            transition: color 0.3s ease;
         }
-        
-        h2 {
-            text-align: right;
-            flex-grow: 1; 
-            font-family: "Handjet", system-ui;
-            font-size: 24px; 
-            margin-bottom: 20px; 
-            margin-left: 10px; 
+
+        #topnav a:hover {
+            color: #E57400;
         }
-        
+
         .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 30px 20px;
             text-align: center;
-            margin-bottom: 50px; 
-            margin-top: 50px; 
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
-        
+
+        .container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
         .container h1 {
-            font-size: 60px; 
-            color: #3D8C95;
+            font-family: 'CooperBits', sans-serif;
+            font-size: 48px;
+            color: #0079BC;
+            margin-bottom: 20px;
         }
-        
-        p {
+
+        .container p {
             font-family: "Handjet", system-ui;
-            font-size: 20px;
-            max-width: fit-content;
-            margin: 5% auto; 
-            color: grey;
-            /* Text reveal effect*/
+            font-size: 25px;
+            max-width: 800px;
+            margin: 5% auto;
+            color: black;
+            line-height: 1.7;
+            text-align: justify;
+            padding: 0 20px;
             position: relative;
             -webkit-clip-path: inset(0 0 100% 0);
             clip-path: inset(0 0 100% 0);
-            -webkit-animation: reveal-text 4s forwards; 
-            animation: reveal-text 4s forwards; 
+            -webkit-animation: reveal-text 4s forwards;
+            animation: reveal-text 4s forwards;
+        }
+
+        .container p::after {
+            content: "";
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: #E57400;
+            margin: 20px auto;
         }
 
         @keyframes reveal-text {
@@ -104,53 +152,51 @@
                 clip-path: inset(0 0 0 0);
             }
         }
-        
-       
-        iframe {
-            display: block;
-            margin: 20px auto; 
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            padding-top: 25px;
+            height: 0;
+            margin-bottom: 50px;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
         }
     </style>
 </head>
+
 <body>
-  
+
+    <!-- Background GIF -->
+    <div id="background"></div>
+
     <header>
-        <nav>
-            <div id="topnav" style="display: flex; align-items: center; justify-content: space-around; height: 80px; padding: 0 20px; font-family: 'Space Mono', monospace;">
-                <a href="../index.html">
-                <h1 style="margin: 0; font-family: 'p22-canterbury-pro', sans-serif; font-size: 45pt; color: #3D8C95;">The Mup</h1>
-                </a>
-                <a href="https://pitchfork.com/reviews/albums/" 
-                style="text-decoration: none;">
-                <h2 style="font-family: 'Handjet', system-ui; color: #E6873C;" 
-                    onmouseover="this.style.color='#3D8C95';" 
-                    onmouseout="this.style.color='#E6873C';">Reviews</h2>
-             </a>
-             <a href="../newmusic/newmusic.html" 
-                style="text-decoration: none;">
-                <h2 style="font-family: 'Handjet', system-ui; color: #E6873C;" 
-                    onmouseover="this.style.color='#3D8C95';" 
-                    onmouseout="this.style.color='#E6873C';">Best New Music</h2>
-             </a>
-             <a href="../board/board.html" 
-                style="text-decoration: none;">
-                <h2 style="font-family: 'Handjet', system-ui; color: #E6873C;" 
-                    onmouseover="this.style.color='#3D8C95';" 
-                    onmouseout="this.style.color='#E6873C';">Board</h2>
-             </a>
-            </div>
+        <nav id="topnav">
+            <a href="../index.html"><h1>The Mup</h1></a>
+            <a href="https://pitchfork.com/reviews/albums/">Reviews</a>
+            <a href="../newmusic/newmusic.html">Best New Music</a>
+            <a href="../board/board.html">Board</a>
         </nav>
     </header>
-    <div class="container">
-        <img src="img/454pic.png" width="50%"> 
-        <h1>454</h1> 
-        <p>I became a fan of artist and producer 454 after I heard his verse on Niontay’s “Supa Bowl LVIII”. His high-pitched reverb verse was just a glimpse into his distinctive sound. Hailing from central Florida, 454 takes the characteristics of Florida rap and emphasizes them to their fullest extent. Heavy autotune and fast-paced are two things that Florida rappers love to incorporate into their music. 454 shows how this has influenced his music with songs like “8Teen” and “ Stitch + Lily” which make me feel like I gained a superstar in Mario Kart. “In Florida, they have this fast-paced thing they do. I was trying that with different melodies because I just didn’t really like the way my voice was sounding. I felt like speeding it up. It just made me enjoy it more” he told Rolling Stone. After discovering him, I listened to his 2021 album 4 Real which features hit songs “ANDRETTI” and “FACE TIME”. A year later he released his second album Fast Trax 3 which pays homage even further to that famous Florida rap style. Fast Trax 3 seems to be my favorite of the two albums. “Tales From The Hood” and “Ice Age” are the songs I constantly find myself listening to. Last Summer 454 and NYC producer SURF GANG dropped their collar Fast 5 - EP. This is what had me hooked to 454’s music. The EP starts with the song “ANGEL” which had me hooked. The combination of SURF GANG’s New York drill influence with 454’s hyper-speed rap works perfectly together to create a short but hit-packed project. Since then we have only received a few singles from 454 but I hope to see him collaborate with other East Coast powerhouses and make himself a household name. Keep your eye out for 454.</p>
-    </div>
-    
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/5NePpSg-MQA?si=cKSN165SRhnZg6Pf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    
-    <div style="margin-bottom: 100px;"></div>
 
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/ZmEErh7j62o?si=lm07XT5Ngp6GLWby" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <main class="container">
+        <img src="img/454pic.png" alt="454">
+        <h1>454</h1>
+        <p>I became a fan of artist and producer 454 after I heard his verse on Niontay’s “Supa Bowl LVIII”. His high-pitched reverb verse was just a glimpse into his distinctive sound. Hailing from central Florida, 454 takes the characteristics of Florida rap and emphasizes them to their fullest extent. Heavy autotune and fast-paced are two things that Florida rappers love to incorporate into their music. 454 shows how this has influenced his music with songs like “8Teen” and “Stitch + Lily” which make me feel like I gained a superstar in Mario Kart. “In Florida, they have this fast-paced thing they do. I was trying that with different melodies because I just didn’t really like the way my voice was sounding. I felt like speeding it up. It just made me enjoy it more,” he told Rolling Stone. After discovering him, I listened to his 2021 album *4 Real*, which features hit songs “ANDRETTI” and “FACE TIME.” A year later, he released his second album *Fast Trax 3*, which pays homage even further to that famous Florida rap style. *Fast Trax 3* seems to be my favorite of the two albums. “Tales From The Hood” and “Ice Age” are the songs I constantly find myself listening to. Last Summer, 454 and NYC producer SURF GANG dropped their collab *Fast 5 - EP*. This is what had me hooked to 454’s music. The EP starts with the song “ANGEL,” which had me hooked. The combination of SURF GANG’s New York drill influence with 454’s hyper-speed rap works perfectly together to create a short but hit-packed project. Since then, we have only received a few singles from 454, but I hope to see him collaborate with other East Coast powerhouses and make himself a household name. Keep your eye out for 454.</p>
+
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/5NePpSg-MQA?si=cKSN165SRhnZg6Pf" title="454 - Video 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/ZmEErh7j62o?si=lm07XT5Ngp6GLWby" title="454 - Video 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </main>
 </body>
 </html>
