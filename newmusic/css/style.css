@@ -153,10 +153,10 @@ body {
     width: 50px;
     height: 3px;
     background-color: #E57400;
-    margin: 20px auto 0; /* space above the line */
+    margin: 20px auto 0; 
 }
 
-/* Remove line from the last item */
+
 .grid-item:last-child::after {
     display: none;
 }

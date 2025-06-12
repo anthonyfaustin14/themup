@@ -5,7 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>The Mup</title>
     
-        <!-- Google Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Geo:ital@0;1&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
@@ -13,7 +12,6 @@
         <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&display=swap" rel="stylesheet">
     
-        <!-- Typekit -->
         <script>
             (function(d) {
                 var config = {
@@ -30,7 +28,6 @@
             })(document);
         </script>
     
-        <!-- Styles -->
         <style>
             /* Load CooperBits */
             @font-face {
@@ -40,7 +37,7 @@
                 font-style: normal;
             }
     
-            /* Basic Reset */
+            
             body {
                 margin: 0;
                 padding: 0;
@@ -68,7 +65,7 @@
             /* Topnav */
             #topnav {
                 display: flex;
-                flex-wrap: wrap;
+                flex-wrap: wrap; 
                 justify-content: center;
                 align-items: center;
                 padding: 20px 10px;
@@ -86,6 +83,7 @@
                 color: #0079BC;
                 margin: 0;
                 transition: transform 0.3s ease;
+                white-space: nowrap; 
             }
     
             #topnav h1:hover {
@@ -102,6 +100,13 @@
     
             #topnav a:hover {
                 color: #E57400;
+            }
+            
+            /* Container for the secondary navigation links */
+            .secondary-nav {
+                display: flex;
+                gap: 20px;
+                align-items: center;
             }
     
             @keyframes bounce {
@@ -165,7 +170,7 @@
             .artist-card a {
                 display: block;
                 margin-top: 10px;
-                font-size: 30px;
+                font-size: 40px;
                 color: black;
                 text-decoration: none;
             }
@@ -207,6 +212,12 @@
                 #topnav a {
                     font-size: 18px;
                 }
+
+          
+                .secondary-nav {
+                    flex-basis: 100%; 
+                    justify-content: center;
+                }
             }
         </style>
     </head>
@@ -214,10 +225,8 @@
 
 <body>
 
-    <!-- Background GIF -->
     <div id="background"></div>
 
-    <!-- Topnav -->
     <header>
         <nav id="topnav"> 
             <a href="whatthemup/whatthemup.html">
@@ -229,26 +238,25 @@
             <a href="whatthemup/whatthemup.html">
                 <h3>?</h3>
             </a>
-            <a href="https://pitchfork.com/reviews/albums/">
-                Reviews
-            </a>
-            <a href="newmusic/newmusic.html">
-                Best New Music
-            </a>
-            <a href="board/board.html">
-                Board
-            </a>
+            <div class="secondary-nav">
+                <a href="https://pitchfork.com/reviews/albums/">
+                    Reviews
+                </a>
+                <a href="newmusic/newmusic.html">
+                    Best New Music
+                </a>
+                <a href="board/board.html">
+                    Board
+                </a>
+            </div>
         </nav>
-        
     </header>
 
-    <!-- Section Title -->
     <section id="rising">
         <h2>Rising Rappers Putting Florida on The Map</h2>
         <p>Click an artist to explore</p>
     </section>
 
-    <!-- Artist Grid -->
     <section class="artist-grid">
         <div class="artist-card">
             <a href="jt/jt.html">

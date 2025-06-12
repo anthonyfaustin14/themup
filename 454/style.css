@@ -1,12 +1,12 @@
 p {
     font-family: "Handjet", system-ui;
     font-size: 20px;
-    max-width: 800px; /* Ensures paragraph is not too wide */
+    max-width: 800px;
     margin: 5% auto;
     color: grey;
-    line-height: 1.7; /* Increased line height for better readability */
-    text-align: center; /* Centering the text */
-    word-spacing: 2px; /* Adds extra spacing between words for clarity */
+    line-height: 1.7; 
+    text-align: center; 
+    word-spacing: 2px; 
 }
 
 p::after {
@@ -14,8 +14,8 @@ p::after {
     display: block;
     width: 50px;
     height: 3px;
-    background-color: #D97791; /* Custom color for the divider */
-    margin: 20px auto; /* Adds space and centers the divider */
+    background-color: #D97791; 
+    margin: 20px auto; 
 }
 
 h1 {
